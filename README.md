@@ -66,6 +66,47 @@ print(superman.fly())                # "Superman is flying at 500 miles per hour
 2. Create your own superhero subclasses to practice inheritance and polymorphism.
 3. Run the usage example to see output demonstrating OOP concepts.
 
+from abc import ABC, abstractmethod
+
+# Abstract base class
+class Mover(ABC):
+    @abstractmethod
+    def move(self):
+        pass
+
+# Vehicle subclasses
+class Car(Mover):
+    def move(self):
+        return "Driving 🚗"
+
+class Plane(Mover):
+    def move(self):
+        return "Flying ✈️"
+
+class Boat(Mover):
+    def move(self):
+        return "Sailing ⛵"
+
+# Animal subclasses
+class Horse(Mover):
+    def move(self):
+        return "Galloping 🐎"
+
+class Bird(Mover):
+    def move(self):
+        return "Soaring 🐦"
+
+class Fish(Mover):
+    def move(self):
+        return "Swimming 🐟"
+
+# List of mixed objects
+movers = [Car(), Plane(), Boat(), Horse(), Bird(), Fish()]
+
+# Demonstrate polymorphic behavior
+for mover in movers:
+    print(f"{type(mover).__name__} is {mover.move()}")
+
 ## License
 
 This project is for educational purposes.
